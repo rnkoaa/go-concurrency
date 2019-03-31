@@ -1,0 +1,15 @@
+---
+tmdb:
+  resource: person
+  url:
+    base: https://api.themoviedb.org/3
+    movie:
+      base: ${tmdb.url.base}/movie
+      full:
+        format: "${tmdb.url.movie.base}/%d?api_key=${tmdb.api.key}&append_to_response=releases,images,keywords,alternative_titles,credits&include_image_language=en,null"
+    person:
+      base: ${tmdb.url.base}/person
+      full:
+        format: "${tmdb.url.person.base}/%d?api_key=${tmdb.api.key}&append_to_response=combined_credits"
+  api:
+      key: ${key}
